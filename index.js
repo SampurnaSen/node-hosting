@@ -1,9 +1,9 @@
-require('./models/db')
+// require('./models/db')
 
 const express = require('express');
 const bodyparser = require('body-parser');
 
-const expenseController = require('./controller/expenseController');
+// const expenseController = require('./controller/expenseController');
 
 var cors = require('cors');
 const app = express();
@@ -21,4 +21,4 @@ app.get('/', (req, res) => {
 
 app.listen(3000, () => console.log('Server started!'));
 
-app.use("/expense", expenseController);
+// app.use("/expense", expenseController);
