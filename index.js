@@ -1,9 +1,7 @@
-// require('./models/db')
-
 const express = require('express');
 const bodyparser = require('body-parser');
-
-// const expenseController = require('./controller/expenseController');
+require('./models/db');
+const expenseController = require('./controller/expenseController');
 
 var cors = require('cors');
 const app = express();
@@ -19,6 +17,6 @@ app.get('/', (req, res) => {
         <h3>Click here to get access to the <b><a href="/expense/list">Database</a></b></h3>`);
 });
 
-app.listen(3000, () => console.log('Server started!'));
+app.use("/expense", expenseController);
 
-// app.use("/expense", expenseController);
+app.listen(3000, () => console.log('Server started!'));

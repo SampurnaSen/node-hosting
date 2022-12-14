@@ -1,7 +1,7 @@
 // Schema
 
 const mongoose = require('mongoose');
-
+console.log("inside model");
 var expenseSchema = new mongoose.Schema({
     expense: {
         type: String,
@@ -22,5 +22,5 @@ var expenseSchema = new mongoose.Schema({
 }, {
     versionKey: false
 });
-
+console.log("expenseSchema", expenseSchema);
 mongoose.model('Expense', expenseSchema);
